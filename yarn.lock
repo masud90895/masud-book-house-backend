@@ -161,6 +161,13 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/http-status@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/@types/http-status/-/http-status-1.1.2.tgz"
+  integrity sha512-GodZPvF3xPVglUx4q7s0plKu1cdW0mMLADpWi5PMMx3n/2xGB6GoKqQxQxp6A5xuARtZpQ9/6p3WDFwCpPaN8A==
+  dependencies:
+    http-status "*"
+
 "@types/json-schema@^7.0.9":
   version "7.0.12"
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.12.tgz"
@@ -1469,6 +1476,11 @@ http-errors@2.0.0:
     setprototypeof "1.2.0"
     statuses "2.0.1"
     toidentifier "1.0.1"
+
+http-status@*, http-status@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.npmjs.org/http-status/-/http-status-1.6.2.tgz"
+  integrity sha512-oUExvfNckrpTpDazph7kNG8sQi5au3BeTo0idaZFXEhTaJKu7GNJCLHI0rYY2wljm548MSTM+Ljj/c6anqu2zQ==
 
 human-signals@^4.3.0:
   version "4.3.1"

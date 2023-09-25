@@ -1,7 +1,9 @@
 //import express from "express";
-import { Application, Request, Response } from 'express'
+import { Application, NextFunction, Request, Response } from 'express'
 import express from 'express'
 import cors from 'cors'
+import globalErrorHandler from './app/middleware/globalErrorHandler'
+import httpStatus from 'http-status'
 
 const app: Application = express()
 const port = 5000
@@ -15,10 +17,23 @@ app.use(cors())
 
 //application  route
 
+// Global error handler
+app.use(globalErrorHandler);
 
-app.get('/', async (req: Request, res: Response) => {
-  // Send a response to the browser
-  res.send('Hello World!')
-})
+
+// Handle Not Found Route
+app.use((req: Request, res: Response, next: NextFunction) => {
+	res.status(httpStatus.NOT_FOUND).json({
+		success: false,
+		message: 'Route not found',
+		errorMessages: [
+			{
+				path: req.originalUrl,
+				message: 'Api Not Found',
+			},
+		],
+	});
+	next();
+});
 
 export { app, port }
